@@ -1,0 +1,28 @@
+nav {
+	position: fixed;
+	top: 0px;
+	width: 100vw;
+	height: 80px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	background-color: red;
+	ul {
+		display: flex;
+		flex-direction: row;
+		list-style: none;
+		li {
+			margin-left: 2%;
+			margin-right: 2%;
+		}
+	}
+	#logged-in {
+		display: none;
+	}
+	.logo {
+		margin-right: auto;
+		padding: 2%;
+	}
+
+
+}
