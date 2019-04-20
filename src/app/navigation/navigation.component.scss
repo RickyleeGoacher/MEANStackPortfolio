@@ -7,21 +7,32 @@ nav {
 	flex-direction: row;
 	align-items: center;
 	background-color: red;
+	z-index: 9999;
 	ul {
 		display: flex;
-		flex-direction: row;
 		list-style: none;
+		align-content: space-evenly;
 		li {
-			margin-left: 2%;
-			margin-right: 2%;
+			margin-right: 4vw;
+			a {
+				color: white;
+				text-decoration: none;
+			}
 		}
 	}
 	#logged-in {
 		display: none;
 	}
 	.logo {
+		display: flex;
+		align-items: center;
+		width: 150px;
+		height: 150px;
 		margin-right: auto;
 		padding: 2%;
+		-webkit-clip-path: polygon(100% 0, 0 0, 0 100%);
+		clip-path: polygon(100% 0, 0 0, 0 100%);
+		background-color: grey;
 	}
 
 
