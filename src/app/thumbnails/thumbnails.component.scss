@@ -17,6 +17,25 @@
 			background-color: grey;
 			-webkit-clip-path: polygon(54% 0, 100% 0, 100% 71%, 0 100%, 0 0);
 			clip-path: polygon(54% 0, 100% 0, 100% 71%, 0 100%, 0 0);
+			overflow: hidden;
+			img {
+				width: 100%;
+				height: auto;
+				object-fit: cover;
+			}
+		}
+		.thumbnail-text {
+			h3 {
+				font-family: 'Abel', sans-serif;
+			}
+			p {
+				font-family: 'Open Sans', sans-serif;
+			}
+			a {
+				text-decoration: none;
+				font-family: 'Open Sans', sans-serif;
+				color: #00ACD6;
+			}
 		}
 		.thumb-shape {
 

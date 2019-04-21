@@ -6,7 +6,7 @@ nav {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	background-color: red;
+	background-image: linear-gradient(to left bottom, #ba1111, #ae0e0e, #a20b0b, #960808, #8a0505);
 	z-index: 9999;
 	-webkit-box-shadow: 4px 4px 20px 0px rgba(50, 50, 50, 0.5);
 	-moz-box-shadow:    4px 4px 20px 0px rgba(50, 50, 50, 0.5);
@@ -20,6 +20,7 @@ nav {
 			a {
 				color: white;
 				text-decoration: none;
+				font-family: 'Abel', sans-serif;
 			}
 		}
 	}
@@ -35,9 +36,11 @@ nav {
 		padding: 2%;
 		-webkit-clip-path: polygon(100% 0, 0 0, 0 100%);
 		clip-path: polygon(100% 0, 0 0, 0 100%);
-		background-color: grey;
-		color: white;
+		background-color: #56423E;
 		font-size: 2em;
+		a {
+			color: white;
+		}
 	}
 
 
