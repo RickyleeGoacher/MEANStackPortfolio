@@ -3,18 +3,18 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavigationComponent } from './navigation/navigation.component';
-import { HomeComponent } from './home/home.component';
-import { FooterComponent } from './footer/footer.component';
-import { AboutComponent } from './about/about.component';
-import { ContactComponent } from './contact/contact.component';
-import { PortfolioComponent } from './portfolio/portfolio.component';
-import { HeroComponent } from './hero/hero.component';
-import { LoginComponent } from './login/login.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { ProjectComponent } from './project/project.component';
-import { ThumbnailsComponent } from './thumbnails/thumbnails.component';
-import { ContactFormComponent } from './contact-form/contact-form.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { HomeComponent } from './components/home/home.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { AboutComponent } from './components/about/about.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { HeroComponent } from './components/hero/hero.component';
+import { LoginComponent } from './components/login/login.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ProjectComponent } from './components/project/project.component';
+import { ThumbnailsComponent } from './components/thumbnails/thumbnails.component';
+import { ContactFormComponent } from './components/contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
