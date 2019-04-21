@@ -1,0 +1,23 @@
+#form-container {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	form {
+		width: 25%;
+		height: 400px;
+		margin: auto;
+		align-items: center;
+    	justify-content: center;
+		display: flex;
+		flex-direction: column;
+		-webkit-box-shadow: 4px 4px 20px 0px rgba(50, 50, 50, 0.5);
+		-moz-box-shadow:    4px 4px 20px 0px rgba(50, 50, 50, 0.5);
+		box-shadow:         4px 4px 20px 0px rgba(50, 50, 50, 0.5);
+		border: solid 4px red;
+		border-radius: 4px;
+		.input-container {
+			margin: 2% auto;
+		}
+	}
+}

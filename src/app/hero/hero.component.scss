@@ -28,9 +28,15 @@
 			display: flex;
 			align-items: center;
 			#hero-text {
-				width: 60%;
+				width: 40%;
 				text-align: center;
 				margin: auto;
+				padding: 2%;
+				-webkit-box-shadow: 4px 4px 20px 0px rgba(50, 50, 50, 0.5);
+				-moz-box-shadow:    4px 4px 20px 0px rgba(50, 50, 50, 0.5);
+				box-shadow:         4px 4px 20px 0px rgba(50, 50, 50, 0.5);
+				background-color: red;
+				color: white;
 			}
 		}
 	}

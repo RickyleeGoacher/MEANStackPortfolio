@@ -13,6 +13,8 @@ import { HeroComponent } from './hero/hero.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProjectComponent } from './project/project.component';
+import { ThumbnailsComponent } from './thumbnails/thumbnails.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { ProjectComponent } from './project/project.component';
     HeroComponent,
     LoginComponent,
     DashboardComponent,
-    ProjectComponent
+    ProjectComponent,
+    ThumbnailsComponent,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,13 @@
+#about-container {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	#about-text {
+		width: 40%;
+		margin: auto;
+		text-align: center;
+		h1 {
+		}
+	}
+}
