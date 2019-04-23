@@ -1,0 +1,68 @@
+const Projects = require('../models/projects');
+const express = require('express');
+const router = express.Router();
+const mongoose = require('mongoose');
+const path = require('path');
+
+// Get all projects
+
+router.get('/', (req, res, next) => {
+	Projects.find((err, data) => {
+		res.json(data);
+	});
+});
+
+// Get single project by url
+
+router.get('/:url', (req, res, next) => {
+	const url = req.params.url;
+	Projects.findOne({ url: url }, (err, data) => {
+		if(!err) {
+			res.json(data);
+		}
+	})
+})
+
+// Post a project to the database
+
+router.post('/create', (req, res) => {
+	if(req.body._id = '') {
+		createProject(req, res);
+	} else {
+		updateProject(req, res);
+	}
+});
+
+function createProject(req, res) {
+	var post = new Projects();
+	post.title = req.body.title;
+	post.image = req.body.image;
+    post.content = req.body.content;
+    post.description = req.body.description;
+    post.save((err, doc) => {
+    	if(!err) {
+    		res.json(doc);
+    	} else {
+    		res.status(400).send("unable to save to database");
+    	}
+    })
+}
+
+function updateProject(req, res) {
+	Projects.findOneAndUpdate({ _id: req.body._id }, req.body, { new: true }, (err, docs) => {
+		if (!err) { res.redirect('/'); }
+	})
+}
+
+router.get('/delete/:id', (req, res, next) => {
+	Projects.findByIdAndRemove(req.params.id, (err, data) => {
+		if(!err) {
+			res.redirect('/');
+		} else {
+			console.log('error');
+		}
+	})
+})
+
+
+module.exports = router;

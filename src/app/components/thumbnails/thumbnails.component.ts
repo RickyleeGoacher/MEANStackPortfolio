@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Projects } from '../../models/project.model';
+import { ProjectService } from '../../services/project.service';
 
 @Component({
   selector: 'app-thumbnails',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ThumbnailsComponent implements OnInit {
 
-  constructor() { }
+	projects: Projects[];
+	displayedProjects = ['title', 'description', 'content', 'image'];
+
+  constructor(private projectService: ProjectService) { }
 
   ngOnInit() {
+ 	this.fetchProjects();
+	}
+	fetchProjects() {
+ 	this.projectService.getProjects().subscribe((data: Projects[]) => {
+  		this.projects = data;
+  		console.log(this.projects);
+  	})
   }
-
 }
