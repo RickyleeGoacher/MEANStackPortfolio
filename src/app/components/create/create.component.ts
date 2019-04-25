@@ -46,14 +46,16 @@ export class CreateComponent implements OnInit {
   	}
 
   	onSubmit() {
-  		this.editorContent = this.editorForm.get('content').value
-  		this.titleContent = this.editorForm.get('title').value
-  		this.urlContent = this.editorForm.get('url').value
-  		this.imageContent = this.editorForm.get('image').value
-  		this.descriptionContent = this.editorForm.get('description').value
-  		console.log(this.editorContent, this.titleContent, this.urlContent, this.imageContent, this.descriptionContent)
+  		this.editorContent = this.editorForm.get('content').value,
+  		this.titleContent = this.editorForm.get('title').value,
+  		this.urlContent = this.editorForm.get('url').value,
+  		this.imageContent = this.editorForm.get('image').value,
+  		this.descriptionContent = this.editorForm.get('description').value,
+  		
   		this.ps.addProject(this.titleContent, this.descriptionContent, this.imageContent, this.editorContent, this.titleToUrl)
   	}
+
+    // Convert title to url
 
   	onKey(event: any) {
   		this.titleToUrl = event.target.value.replace(/ +/g, '-').toLowerCase();
