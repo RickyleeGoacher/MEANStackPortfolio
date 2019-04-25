@@ -5,8 +5,10 @@
 		</div>
 		<div class="thumbnail-text">
 			<h3>{{ project.title }}</h3>
-			<p>{{ project.description }}</p><a href="{{ project.url }}">Read more...</a>
+			<p>{{ project.description }}</p><a href="/portfolio/{{ project.url }}">Read more...</a>
 		</div>
 		<div class="thumb-shape"></div>
+		<button (click)="deleteProject(project._id)">X</button>
+		<a href="project/edit/{{project._id}}"> Edit </a>
 	</div>
 </div>

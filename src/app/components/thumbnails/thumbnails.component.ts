@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Projects } from '../../models/project.model';
 import { ProjectService } from '../../services/project.service';
+
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-thumbnails',
@@ -9,18 +11,28 @@ import { ProjectService } from '../../services/project.service';
 })
 export class ThumbnailsComponent implements OnInit {
 
-	projects: Projects[];
-	displayedProjects = ['title', 'description', 'content', 'image'];
+	@Input() projects: Projects[];
+  
+
 
   constructor(private projectService: ProjectService) { }
 
   ngOnInit() {
  	this.fetchProjects();
 	}
+
 	fetchProjects() {
  	this.projectService.getProjects().subscribe((data: Projects[]) => {
   		this.projects = data;
   		console.log(this.projects);
   	})
   }
+
+  deleteProject(id) {
+    this.projectService.deleteProject(id).subscribe(res => {
+      console.log('Deleted');
+      this.fetchProjects();
+    })
+  }
+
 }

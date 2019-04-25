@@ -7,6 +7,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoginComponent } from './components/login/login.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ProjectComponent } from './components/project/project.component';
+import { EditComponent } from './components/edit/edit.component';
+import { CreateComponent } from './components/create/create.component';
 
 const routes: Routes = [
 	{ path: '', component: HomeComponent },
@@ -15,7 +17,9 @@ const routes: Routes = [
 	{ path: 'dashboard', component: DashboardComponent },
 	{ path: 'login', component: LoginComponent },
 	{ path: 'portfolio', component: PortfolioComponent },
-	{ path: 'portfolio/:id', component: ProjectComponent }
+	{ path: 'portfolio/:id', component: ProjectComponent },
+	{ path: 'project/edit/:id', component: EditComponent },
+	{ path: 'create', component: CreateComponent }
 ];
 
 @NgModule({
@@ -31,5 +35,6 @@ HomeComponent,
 ContactComponent,
 DashboardComponent,
 LoginComponent,
-ProjectComponent
+ProjectComponent,
+EditComponent
 ];

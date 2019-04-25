@@ -1,6 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
+import { QuillModule } from 'ngx-quill';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SafeHtmlPipe } from "./pipes/safehtml.pipe";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +23,8 @@ import { ThumbnailsComponent } from './components/thumbnails/thumbnails.componen
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
 
 import { ProjectService } from './services/project.service';
+import { CreateComponent } from './components/create/create.component';
+import { EditComponent } from './components/edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -33,12 +40,18 @@ import { ProjectService } from './services/project.service';
     DashboardComponent,
     ProjectComponent,
     ThumbnailsComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    CreateComponent,
+    EditComponent,
+    SafeHtmlPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    QuillModule,
+    FormsModule
   ],
   providers: [ProjectService],
   bootstrap: [AppComponent]
