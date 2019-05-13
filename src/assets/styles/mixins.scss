@@ -1,0 +1,16 @@
+@mixin flex-items-center {
+	display: flex;
+	align-items: center;
+}
+
+@mixin box-shadow {
+	-webkit-box-shadow: 4px 4px 20px 0px rgba(50, 50, 50, 0.5);
+	-moz-box-shadow:    4px 4px 20px 0px rgba(50, 50, 50, 0.5);
+	box-shadow:         4px 4px 20px 0px rgba(50, 50, 50, 0.5);
+}
+
+@mixin image-cover {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}

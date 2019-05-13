@@ -1,7 +1,6 @@
 <div id="about-container">
-	<div id="about-text">
-		<h1>About</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque facilisis, velit non bibendum venenatis, lectus nulla rhoncus mauris, eget sodales tortor diam nec erat. Nunc tincidunt arcu vitae pellentesque facilisis. Donec placerat mauris id metus rutrum congue. Fusce ac massa vehicula eros iaculis aliquam ut sit amet metus. Nam vitae malesuada arcu. Vivamus id consequat risus. Vivamus tellus est, varius ut libero quis, vestibulum rutrum magna. Nam blandit odio ipsum, vitae efficitur sapien sodales nec. Vivamus elit odio, aliquet in hendrerit mattis, feugiat vitae mauris.</p>
-		<p>Ut aliquet porta lectus, vel tristique felis imperdiet in. Vivamus ac dolor dictum ante auctor iaculis. Proin dapibus mi eget urna semper, id varius orci convallis. Vivamus cursus erat nec nisl condimentum tempor. Aliquam egestas commodo erat ut dictum. Donec convallis bibendum libero eu porttitor. Suspendisse lobortis ullamcorper lorem euismod bibendum.</p>
+	<div id="about-text" *ngFor="let about of about">
+		<h1>{{ about.title }}</h1>
+		<p [innerHtml]="content | safeHtml"></p>
 	</div>
 </div>

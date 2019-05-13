@@ -1,0 +1,23 @@
+#editor-container {
+	width: 80%;
+	min-height: 100vh;
+	margin: 0 auto;
+	margin-top: 80px;
+	padding: 2%;
+	input {
+		width: 100%;
+		margin-top: 1%;
+	}
+	.form-group {
+		margin-bottom: 1%;
+	}
+	button {
+		width: 100%;
+		padding: 2%;
+	}
+	textarea {
+		width: 50%;
+		height: 200px;
+		margin-bottom: 2%;
+	}
+}

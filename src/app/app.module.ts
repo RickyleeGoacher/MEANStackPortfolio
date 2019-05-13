@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { QuillModule } from 'ngx-quill';
@@ -23,8 +23,15 @@ import { ThumbnailsComponent } from './components/thumbnails/thumbnails.componen
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
 
 import { ProjectService } from './services/project.service';
+import { UserService } from './services/user.service';
+import { AuthGuard } from './auth.guard';
 import { CreateComponent } from './components/create/create.component';
 import { EditComponent } from './components/edit/edit.component';
+import { RegisterComponent } from './components/register/register.component';
+import { TokenInterceptorService } from './services/token-interceptor.service';
+import { AboutEditComponent } from './components/about-edit/about-edit.component';
+import { HomeEditComponent } from './components/home-edit/home-edit.component';
+import { SocialEditComponent } from './components/social-edit/social-edit.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +50,11 @@ import { EditComponent } from './components/edit/edit.component';
     ContactFormComponent,
     CreateComponent,
     EditComponent,
-    SafeHtmlPipe
+    SafeHtmlPipe,
+    RegisterComponent,
+    AboutEditComponent,
+    HomeEditComponent,
+    SocialEditComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +64,15 @@ import { EditComponent } from './components/edit/edit.component';
     QuillModule,
     FormsModule
   ],
-  providers: [ProjectService],
+  providers: [ProjectService, UserService, AuthGuard, 
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptorService,
+    multi: true
+  }
+
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

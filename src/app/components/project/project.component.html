@@ -1,7 +1,6 @@
-<app-hero> </app-hero>
-<div id="project-container">
+<app-hero [project]="project"> </app-hero>
+<div id="project-container" [innerHtml]="content | safeHtml">
 
-{{ project.content }}
 
 
 

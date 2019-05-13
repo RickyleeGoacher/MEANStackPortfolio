@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ProjectService } from '../../services/project.service';
+import { HomeService } from '../../services/home.service';
 
 @Component({
   selector: 'app-hero',
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeroComponent implements OnInit {
 
-  constructor() { }
+	@Input() project: any = {};
+	@Input() home: any = {};
+
+  constructor(private projectService: ProjectService, private homeService: HomeService) { }
 
   ngOnInit() {
   }

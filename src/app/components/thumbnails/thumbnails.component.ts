@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Projects } from '../../models/project.model';
 import { ProjectService } from '../../services/project.service';
+import { UserService } from '../../services/user.service';
 
 import { Router } from '@angular/router';
 
@@ -15,7 +16,7 @@ export class ThumbnailsComponent implements OnInit {
   
 
 
-  constructor(private projectService: ProjectService) { }
+  constructor(private projectService: ProjectService, private userService:UserService,) { }
 
   ngOnInit() {
  	this.fetchProjects();

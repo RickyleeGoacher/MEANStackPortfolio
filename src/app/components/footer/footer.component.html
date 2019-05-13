@@ -1,20 +1,14 @@
 <footer>
 	<div id="social">
 		<div id="social-links">
-			<div class="icon">
-				<i class="fab fa-linkedin"></i>
-			</div>
-			<div class="icon">
-				<i class="fab fa-facebook-square"></i>
-			</div>
-			<div class="icon">
-				<i class="fab fa-twitter-square"></i>
+			<div *ngFor="let social of socials" class="icon">
+					<a *ngIf="userService.loggedIn" href="/social/edit/{{ social._id }}"><i class="{{social.icon}}"></i></a>
+					<a *ngIf="!userService.loggedIn" href="{{ social.link }}"><i class="{{social.icon}}"></i></a>
 			</div>
 		</div>
-		<div id="bottom-triangle"><i class="fas fa-arrow-circle-up"></i></div>
+		<div id="bottom-triangle"><i (click)="pageTop()" class="fas fa-arrow-circle-up"></i></div>
 	</div>
 	<div id="bottom-bar">
-		<p>Ricky Goacher</p>
-		
+		<p>Ricky Goacher</p>		
 	</div>
 </footer>

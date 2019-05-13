@@ -1,0 +1,23 @@
+<div id="editor-container">
+
+	<form  [formGroup]="updateForm" (ngSubmit)="onSubmit()" novalidate>
+	<div>
+		<div class="form-group">  
+			<label for="id">ID</label>
+			<input type="text" name="id" formControlName="id" #id/>
+		</div>
+
+		<div class="form-group">  
+			<label for="icon">Icon</label>
+			<input type="text" name="icon" formControlName="icon" #icon/>
+		</div>
+
+		<div class="form-group">  
+			<label for="link">Link</label>
+			<input type="text" name="link" placeholder="Add link" formControlName="link" #link/>
+		</div>
+	</div>	
+
+		<button type="submit">Submit</button>
+	</form>
+</div>

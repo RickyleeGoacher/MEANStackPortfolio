@@ -1,14 +1,24 @@
 <div id="hero-container">
 	<div id="image-container">
 		<div id="image">
-			<img src="./assets/images/hero-image.jpg"/>
+			<img *ngIf="project.title" src="http://localhost:3000/images/{{ project.image }}"/>
+			<img *ngIf="home.title" src="http://localhost:3000/images/{{ home.image }}"/>
+			<img *ngIf="(!home.title || !project.title)" src="../../../assets/images/hero-image.jpg"/>
 		</div>
 		<div id="hero-triangle"></div>
 		<div id="hero-text-container">
-			<div id="hero-text">
-				<h1>Games design | James Linacre</h1>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque facilisis, velit non bibendum venenatis, lectus nulla rhoncus mauris, eget sodales tortor diam nec erat.</p>
+			<div id="hero-text" *ngIf="project.title">
+				<h1>{{ project.title }}</h1>
+				<p>{{ project.description }}</p>
 			</div>
+			<div id="hero-text" *ngIf="home.title">
+				<h1>{{ home.title }}</h1>
+				<p>{{ home.description }}</p>
+			</div>
+			<div id="hero-text" *ngIf="!home.title && !project.title">
+				<h1>Portfolio Title</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi finibus, urna vitae rhoncus vestibulum, mi leo vulputate ex, vitae maximus purus quam</p>
+			</div>		
 		</div>
 	</div>
 </div>

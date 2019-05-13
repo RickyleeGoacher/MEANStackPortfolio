@@ -26,6 +26,12 @@ export class ProjectService {
   		return this.http.get<Projects[]>(`${this.uri}/projects/update/${id}`);
   	}
 
+    // Get projects by url
+
+    getProjectByUrl(url):Observable<Projects[]> {
+      return this.http.get<Projects[]>(`${this.uri}/projects/${url}`);
+    }
+
   // Add project to database
 
     addProject(title, description, image, content, url) {

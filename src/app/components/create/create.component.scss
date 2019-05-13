@@ -1,7 +1,45 @@
+@import '../../../assets/styles/variables.scss';
+@import '../../../assets/styles/mixins.scss';
+
 #editor-container {
+	font-family: $main-font;
 	width: 80%;
 	margin: 0 auto;
-	height: 100vh;
 	margin-top: 80px;
 	padding: 2%;
+	.form {
+		display: none;
+		border: solid 1px grey;
+		border-top: none;
+		padding: 4%;
+		width: 95.8%;
+	}
+	input {
+		width: 100%;
+		margin-top: 1%;
+	}
+	.form-group {
+		margin-bottom: 1%;
+	}
+	button {
+		width: 100%;
+		padding: 2%;
+	}
+	textarea {
+		width: 50%;
+		height: 200px;
+		margin-bottom: 2%;
+	}
+	#hide-form {
+		width: 100%;
+		padding: 1% 2%;
+		background-image: $main-gradient;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		color: white;
+		#label {
+			margin-left: auto;
+		}
+	}
 }

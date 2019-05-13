@@ -1,0 +1,41 @@
+@import '../../../assets/styles/variables.scss';
+@import '../../../assets/styles/mixins.scss';
+
+#contact-container {
+	font-family: $main-font;
+	width: 50%;
+	min-height: 100vh;
+	margin: 0 auto;
+	margin-top: 80px;
+	padding: 2%;
+	form {
+	padding: 4%;
+	border-radius: 1.5%;
+	@include box-shadow;
+	}
+	#form-head {
+		width: 96%;
+		text-align: center;
+		background-image: $main-gradient;
+		color: white;
+		margin-bottom: 5%;
+		padding: 2%;
+
+	}
+	input {
+		width: 100%;
+		margin-top: 1%;
+	}
+	.form-group {
+		margin-bottom: 1%;
+	}
+	button {
+		width: 100%;
+		padding: 2%;
+	}
+	textarea {
+		width: 100%;
+		height: 200px;
+		margin-bottom: 2%;
+	}
+}
