@@ -43,3 +43,13 @@
 		}
 	}
 }
+
+@media (max-width: 415px) {
+
+#editor-container {
+	textarea {
+		width: 100%;
+	}
+}
+
+}

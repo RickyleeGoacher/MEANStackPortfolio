@@ -3,9 +3,9 @@
 </div>
 <nav>
 	<ul id="main-nav">
-		<li><a routerLink="portfolio">Portfolio</a></li>
-		<li><a routerLink="about">About</a></li>
-		<li><a routerLink="contact">Contact</a></li>
+		<li><a *ngIf="!userService.loggedIn">routerLink="portfolio">Portfolio</a></li>
+		<li><a *ngIf="!userService.loggedIn">routerLink="about">About</a></li>
+		<li><a *ngIf="!userService.loggedIn">routerLink="contact">Contact</a></li>
 		<li *ngIf="userService.loggedIn"><a routerLink="create">Create</a></li>
 		<li *ngIf="userService.loggedIn"><a routerLink="dashboard">Dashboard</a></li>
 		<li *ngIf="userService.loggedIn"><a (click)='logout()'>Logout</a></li>

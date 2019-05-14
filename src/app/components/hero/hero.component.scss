@@ -99,3 +99,19 @@ clip-path: polygon(5% 0, 100% 0, 140% 0%, 95% 100%, 0 100%, 0 15%);
 
 
 }
+
+@media (max-width: 320px) {
+
+#hero-container {
+	#image-container {
+		#hero-text-container {
+			#hero-text {
+				h1 {
+					font-size: 1.2rem;
+				}
+			}
+		}
+	}
+}
+
+}
