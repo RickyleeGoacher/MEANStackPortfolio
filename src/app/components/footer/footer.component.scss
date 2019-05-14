@@ -58,22 +58,32 @@ footer {
 
 #social, #bottom-bar{ @include flex-items-center; }
 
+@media (max-width: 736px) {
+
+	footer {
+		#social {
+			#bottom-triangle {
+				width: 100px;
+				height: 100px;
+				i {
+					padding: 15%;
+				}
+			}
+		}
+	}
+
+}
+
 @media (max-width: 415px) {
 
-footer {
-
-#social {
-
-#bottom-triangle {
-	width: 100px;
-	height: 100px;
-	i {
-		padding: 15%;
+	footer {
+		#social {
+			#social-links {
+				.icon {
+					font-size: 4em;
+				}
+			}
+		}
 	}
-}
-
-}
-
-}
 
 }

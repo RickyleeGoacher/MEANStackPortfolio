@@ -3,10 +3,11 @@
 
 #about-container {
 	width: 100%;
-	height: 100vh;
+	min-height: 100vh;
 	@include flex-items-center;
 	#about-text {
 		width: 40%;
+		padding: 2%;
 		margin: auto;
 		text-align: center;
 		h1 {
@@ -14,4 +15,27 @@
 			font-size: 2em;
 		}
 	}
+}
+
+@media (max-width: 736px) {
+
+	#about-container {
+		margin-top: 60px;
+		#about-text {
+			width: 60%;
+		}
+	}
+
+}
+
+
+@media (max-width: 415px) {
+
+	#about-container {
+		margin-top: 60px;
+		#about-text {
+			width: 80%;
+		}
+	}
+
 }
