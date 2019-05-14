@@ -24,12 +24,7 @@ app.use(cors({
   credentials:true,
 }));
 
-
-
-//app.use(express.static(path.join(__dirname, '../dist/angularGamePortfolio/')));
-
-
-app.use('/images', express.static('images'))
+app.use(express.static(path.join(__dirname, './dist/')));
 
 const MongoStore = require('connect-mongo')(session);
 
@@ -51,9 +46,9 @@ app.use('/api/about', AboutRoute);
 app.use('/api/upload', UploadRoute);
 app.use('/api/social', SocialRoute);
 
-//app.get("/*", function(req, res) {
-//res.sendFile(path.join(__dirname, "../dist/angularGamePortfolio/"));
-//});
+app.use(function(req, res) {
+    res.sendFile(path.join(__dirname, '/dist', 'index.html'));
+});
 
 const PORT = process.env.PORT || 3000;
 

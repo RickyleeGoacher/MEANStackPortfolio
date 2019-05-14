@@ -1,9 +1,9 @@
 <div id="hero-container">
 	<div id="image-container">
 		<div id="image">
-			<img *ngIf="project.title" src="http://localhost:3000/images/{{ project.image }}"/>
-			<img *ngIf="home.title" src="http://localhost:3000/images/{{ home.image }}"/>
-			<img *ngIf="(!home.title || !project.title)" src="../../../assets/images/hero-image.jpg"/>
+			<img *ngIf="project.title" src="assets/images/{{ project.image }}"/>
+			<img *ngIf="home.title" src="assets/images/{{ home.image }}"/>
+			<img *ngIf="(!home.title || !project.title)" src="assets/images/hero-image.jpg"/>
 		</div>
 		<div id="hero-triangle"></div>
 		<div id="hero-text-container">

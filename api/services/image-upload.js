@@ -16,7 +16,7 @@ router.route('/file').post(ensureAutenticated, (req, res, next) => {
             fileData.ImageSrc = fileData.ImageSrc.replace("data:image/png;base64,", "");
             fileData.ImageSrc = fileData.ImageSrc.replace("data:image/jpg;base64,", "");
             fileData.ImageSrc = fileData.ImageSrc.replace("data:image/gif;base64,", "");
-            fs.writeFile("../dist/angularGamePortfolio/assets/images/" + fileData.ImageName, fileData.ImageSrc, 'base64', (err) => {
+            fs.writeFile("./dist/assets/images/" + fileData.ImageName, fileData.ImageSrc, 'base64', (err) => {
                 if(err) {
                     console.log(err);
                 } else {
