@@ -25,7 +25,6 @@ export class ThumbnailsComponent implements OnInit {
 	fetchProjects() {
  	this.projectService.getProjects().subscribe((data: Projects[]) => {
   		this.projects = data;
-  		console.log(this.projects);
   	})
   }
 

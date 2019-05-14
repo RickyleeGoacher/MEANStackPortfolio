@@ -27,7 +27,6 @@ export class ProjectComponent implements OnInit {
  	      this.ps.getProjectByUrl(this.url).subscribe(res => {
   		    this.project = res;
   		    this.content = this.project.content;
-  		    console.log(this.project);
   	    });
       });
     }

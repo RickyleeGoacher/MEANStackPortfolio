@@ -83,8 +83,7 @@ export class CreateComponent implements OnInit {
   		this.ps.addProject(this.titleContent, this.descriptionContent, this.imageContent, this.editorContent, this.titleToUrl),
       console.log(this.imageContent)
             let fileData = {ImageName: this.imageName, ImageSrc: this.imageSrc};
-           this.is.UploadFile(fileData).subscribe(responce => {
-        console.log(responce);
+           this.is.UploadFile(fileData).subscribe(response => {
       })
     }
 

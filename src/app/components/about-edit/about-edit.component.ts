@@ -61,7 +61,6 @@ export class AboutEditComponent implements OnInit {
   		this.updateForm.get('title').setValue(this.abouts.title);
         this.updateForm.get('description').setValue(this.abouts.description);
         this.updateForm.get('id').setValue(this.abouts._id);
-  		console.log(this.abouts);
   	})
   }
   	onSubmit() {

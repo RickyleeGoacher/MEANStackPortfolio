@@ -21,7 +21,6 @@ export class HomeComponent implements OnInit {
 	fetchHome() {
  	this.homeService.getHome().subscribe((data: Home[]) => {
   		this.home = data[0];
-  		console.log(this.home);
   	})
   }
 

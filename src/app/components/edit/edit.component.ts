@@ -79,7 +79,6 @@ this.fetchProject();
         this.updateForm.get('description').setValue(this.project.description);
         this.updateForm.get('content').setValue(this.project.content);
         this.updateForm.get('url').setValue(this.project.url);
-  		console.log(this.project);
   	});
  });
   }
@@ -98,7 +97,6 @@ this.fetchProject();
       if(this.updateForm.get('image').value != "") {
         var fileData = {ImageName: this.imageName, ImageSrc: this.imageSrc};
           this.is.UploadFile(fileData).subscribe(response => {
-          console.log(response);
       })
       }
 

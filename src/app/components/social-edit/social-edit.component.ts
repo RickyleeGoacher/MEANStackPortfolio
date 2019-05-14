@@ -44,7 +44,6 @@ export class SocialEditComponent implements OnInit {
   			this.updateForm.get('icon').setValue(this.social.icon);
   			this.updateForm.get('link').setValue(this.social.link);
   			this.updateForm.get('id').setValue(this.social._id);
-  		console.log(this.social);
   	});
  });
   }

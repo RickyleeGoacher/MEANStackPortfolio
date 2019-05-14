@@ -23,7 +23,6 @@ pageTop() {
 	fetchSocials() {
  	this.ss.getSocial().subscribe((data: Socials[]) => {
   		this.socials = data;
-  		console.log(this.socials);
   	})
   }
 
