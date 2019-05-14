@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class UserService {
 
-	uri:string = 'http://localhost:3000'; 
+	uri:string = 'http://localhost:3000/api'; 
 
   constructor(private http: HttpClient, private router: Router) { }
 

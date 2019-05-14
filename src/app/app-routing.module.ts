@@ -44,5 +44,6 @@ LoginComponent,
 RegisterComponent,
 ProjectComponent,
 SocialEditComponent,
-EditComponent
+EditComponent,
+CreateComponent
 ];

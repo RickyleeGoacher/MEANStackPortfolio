@@ -1,7 +1,7 @@
-import { Component, OnInit, Input, EventEmitter, Output} from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import { Socials } from '../../models/social.model';
 import { SocialService } from '../../services/social.service';
-import { UserService } from '../../services/user.service';
+import { UserService } from '../../services/user.service'; 
 
 @Component({
   selector: 'app-footer',

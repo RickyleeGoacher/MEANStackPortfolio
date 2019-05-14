@@ -16,7 +16,6 @@ export class EditComponent implements OnInit {
 
 	id: String;
 	project: any = {};
-	updateForm: FormGroup;
   imageName: string;
   imageSrc: string;
 
@@ -56,12 +55,15 @@ export class EditComponent implements OnInit {
     	});
   }
 
-   
+     updateForm: FormGroup;
   	editorContent: string = null;
   	titleContent: string = null;
   	urlContent: string = null;
   	imageContent: string = null;
   	descriptionContent: string = null;
+    editorStyle = {
+      height: '500px'
+    }
 
   ngOnInit() {
 

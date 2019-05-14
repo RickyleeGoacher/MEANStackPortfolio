@@ -24,7 +24,10 @@ app.use(cors({
   credentials:true,
 }));
 
-app.use(express.static(path.join(__dirname, 'images')));
+
+
+//app.use(express.static(path.join(__dirname, '../dist/angularGamePortfolio/')));
+
 
 app.use('/images', express.static('images'))
 
@@ -41,13 +44,18 @@ app.use(passport.session());
 
 require('./config/passport')(passport);
 
-app.use('/projects', ProjectRoute);
-app.use('/users', UserRoute);
-app.use('/home', HomeRoute);
-app.use('/about', AboutRoute);
-app.use('/upload', UploadRoute);
-app.use('/social', SocialRoute);
+app.use('/api/projects', ProjectRoute);
+app.use('/api/users', UserRoute);
+app.use('/api/home', HomeRoute);
+app.use('/api/about', AboutRoute);
+app.use('/api/upload', UploadRoute);
+app.use('/api/social', SocialRoute);
+
+//app.get("/*", function(req, res) {
+//res.sendFile(path.join(__dirname, "../dist/angularGamePortfolio/"));
+//});
 
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+

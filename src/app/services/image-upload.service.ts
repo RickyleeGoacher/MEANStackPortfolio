@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ImageUploadService {
 
-	 uri:string = 'http://localhost:3000';
+	 uri:string = 'http://localhost:3000/api';
 
   constructor(private httpClient: HttpClient) { }
 
