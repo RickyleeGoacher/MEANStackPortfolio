@@ -84,7 +84,6 @@ export class HomeEditComponent implements OnInit {
   		this.updateForm.get('title').setValue(this.homes.title);
         this.updateForm.get('description').setValue(this.homes.description);
         this.updateForm.get('id').setValue(this.homes._id);
-  		console.log(this.homes);
   		})
   	}
   	onSubmit() {
@@ -106,7 +105,6 @@ export class HomeEditComponent implements OnInit {
       if(this.updateForm.get('image').value != "") {
         var fileData = {ImageName: this.imageName, ImageSrc: this.imageSrc};
           this.is.UploadFile(fileData).subscribe(responce => {
-          console.log(responce);
       })
     }
 	}

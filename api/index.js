@@ -15,6 +15,9 @@ const path = require('path');
 const passport = require('passport');
 const session = require('express-session');
 const fs = require('fs');
+const helmet = require('helmet');
+
+app.use(helmet());
 
 app.use(express.urlencoded({ limit: '50mb', extended: true }))
 app.use(bodyParser.json({ limit: '50mb', extended: true }));
@@ -53,4 +56,3 @@ app.use(function(req, res) {
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
-
