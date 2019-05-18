@@ -8,17 +8,29 @@ import { UserService } from './services/user.service';
 })
 export class AuthGuard implements CanActivate {
 
+  expire: any = sessionStorage.getItem('expire');
+
   constructor(private userService: UserService, private router: Router) {}
 
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | boolean {
-      if (this.userService.loggedIn) { return true; }
 
-      console.log('Access Denied!')
-      this.router.navigate(['/login']);
-      return false
+      if (this.userService.loggedIn && Date.now() / 1000 < this.expire) { 
+        return true; 
+      } else {
 
-
+        if(sessionStorage.getItem('token')) {
+          sessionStorage.removeItem('token')
+          sessionStorage.removeItem('expire')
+          this.userService.logout();
+          this.router.navigate(['/login']);
+          return false;
+        } else {
+        console.log('Access Denied!')
+        this.router.navigate(['/login']);
+        return false;
+        }
+    }
   }
 }

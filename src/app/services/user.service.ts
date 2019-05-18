@@ -41,11 +41,11 @@ export class UserService {
   }
 
   get loggedIn(): boolean {
-    return !!localStorage.getItem('token');
+    return !!sessionStorage.getItem('token');
   }
 
   getToken(): any {
-    return localStorage.getItem('token');
+    return sessionStorage.getItem('token');
   }
 
 

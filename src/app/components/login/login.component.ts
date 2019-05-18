@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from '../../services/user.service';
+import * as jwt_decode from "jwt-decode";
 
 
 @Component({
@@ -36,10 +37,11 @@ export class LoginComponent implements OnInit {
     this.user.login(JSON.stringify(this.loginForm.value))
     .subscribe(
       res => {
-        console.log(res);
         if(res.user) {
-        localStorage.setItem('token', res.token)
-        this.router.navigate(['/'])
+        sessionStorage.setItem('token', res.token)
+        const decoded = jwt_decode(res.token)
+        sessionStorage.setItem('expire', decoded.exp)
+       this.router.navigate(['/'])
         } else {
           this.errorMessage = res.message;
         }
