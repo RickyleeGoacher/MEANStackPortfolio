@@ -6,15 +6,15 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Several things are required to get the app up and running.
 
-markup : * In the root of the api folder create a `.env` file and add the following information
-			* SECRET= <-This should contain a secret string of characters, for example "This is my secret string".
-			* MONGO_URI= <-This should contain the `uri` for your `mongodb` database.
-			* SECRETCODE= <-This should container the secret password used to create admin acounts through the registration.
+* In the root of the api folder create a `.env` file and add the following information
+* SECRET= <-This should contain a secret string of characters, for example "This is my secret string".
+* MONGO_URI= <-This should contain the `uri` for your `mongodb` database.
+* SECRETCODE= <-This should container the secret password used to create admin acounts through the registration.
 
 ## Functionality
 
 This portfolio application has multiple functionality.
-markup : * Login & Admin registration.
+* Login & Admin registration.
 * CRUD functionality, create, read, update and delete posts as well as editing homepage, about and social link information.
 * Image uploads.
 * Admin Dashboard.
@@ -49,6 +49,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Todo 
 
-markup : * Custom quill editor.
-		* Improve responsive.
-		
+* Custom quill editor.
+* Improve responsive.
+
