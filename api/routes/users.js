@@ -92,7 +92,7 @@ router.post('/login',function(req,res,next){
       if (err) { return res.status(501).json(err); }
       
       if(!err) {
-		jwt.sign({user}, process.env.SECRET, { expiresIn: '2m' }, (err, token) => {
+		jwt.sign({user}, process.env.SECRET, { expiresIn: '4h' }, (err, token) => {
            return res.status(200).json({token, user});
       });
       } 
