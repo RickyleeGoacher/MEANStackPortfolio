@@ -19,6 +19,7 @@ export class NavigationComponent implements OnInit {
   		    data => {
             console.log(data);
             sessionStorage.removeItem('token');
+            sessionStorage.removeItem('expire');
             this.router.navigate(['/login']);
           },
   		    error => {

@@ -13,7 +13,8 @@ export class RegisterComponent implements OnInit {
 	registerForm:FormGroup = new FormGroup({
     	email:new FormControl(null,[Validators.email,Validators.required]),
     	password:new FormControl(null,Validators.required),
-    	password2:new FormControl(null,Validators.required)
+    	password2:new FormControl(null,Validators.required),
+      adminSecret:new FormControl(null,Validators.required)
   	})
 
   constructor(private router: Router, private userService: UserService) { }

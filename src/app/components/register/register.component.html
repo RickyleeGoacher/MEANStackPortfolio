@@ -19,6 +19,11 @@
           <input formControlName="password2" type="password" class="form-control" id="password2" aria-describedby="passHelp2" placeholder="password">
           <small id="passHelp2"></small>
         </div>
+      <div class="form-group">
+          <label for="adminSecret">Admin Password</label>
+          <input formControlName="adminSecret" type="password" class="form-control" id="adminSecret" aria-describedby="passHelp2" placeholder="adminSecret">
+          <small id="passHelp2"></small>
+        </div>
       <div class="form-group" style="text-align:center;">
           <button type="submit">Register</button>
           <button type="button" (click)="moveToLogin()">Log in</button>

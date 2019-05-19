@@ -12,7 +12,7 @@ const path = require('path');
 
 router.post('/register', (req, res, next) => {
 
-	const { email, password, password2 } = req.body;
+	const { email, password, password2, adminSecret } = req.body;
 
 	let errors = [];
 
@@ -30,6 +30,10 @@ router.post('/register', (req, res, next) => {
 		errors.push({ msg: 'Passwords do not match' }); // Push error message to errors
 	}
 
+	if(adminSecret != process.env.SECRETCODE) {
+		errors.push({ msg: 'Incorrect admin credentials'});
+	}
+
 	// If errors exsist reload register with user inputted data
 
 	if(errors.length > 0){
@@ -45,11 +49,9 @@ router.post('/register', (req, res, next) => {
 
 				errors.push({ msg: 'Email is already registered'}); // Push error
 
-				res.json({
-					errors
-				});
+			} 
 
-			} else {
+			if (errors.length === 0) {
 
 				const newUser = new Users({
 					email,
@@ -74,9 +76,7 @@ router.post('/register', (req, res, next) => {
 					});
 				});
 			}
-	}).catch(err => {
-            console.log('Registration error');
-        });
+	}).catch(err => console.log(err));
 });
 
 // Login request - Check is login credentials are correct then redirect to dashboard else back to login
