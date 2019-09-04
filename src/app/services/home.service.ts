@@ -2,33 +2,34 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Home } from '../models/home.model';
 import { Observable } from 'rxjs';
-import { Router } from '@angular/router'; 
+import { Router } from '@angular/router';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HomeService {
 
- uri:string = 'http://localhost:3000/api'; // Api
+ private env = environment;
 
   constructor(private http: HttpClient, private router: Router) { }
 
   // Get projects
 
   	getHome():Observable<Home[]> {
-  		return this.http.get<Home[]>(`${this.uri}/home`)
+  		return this.http.get<Home[]>(`${this.env.apiUrl}/home`)
   	}
 
   	// Get projects by id
 
   	getHomeById(id):Observable<Home[]> {
-  		return this.http.get<Home[]>(`${this.uri}/home/update/${id}`);
+  		return this.http.get<Home[]>(`${this.env.apiUrl}/home/update/${id}`);
   	}
 
     // Get projects by url
 
     getHomeByUrl(url):Observable<Home[]> {
-      return this.http.get<Home[]>(`${this.uri}/home/${url}`);
+      return this.http.get<Home[]>(`${this.env.apiUrl}/home/${url}`);
     }
 
   // Add project to database
@@ -45,7 +46,7 @@ export class HomeService {
         description: description,
         image: image
       };
-      return this.http.post(`${this.uri}/home/create`, home, options)
+      return this.http.post(`${this.env.apiUrl}/home/create`, home, options)
       .subscribe(data => {
         console.log(data);
         this.router.navigate(['/']);
@@ -66,7 +67,7 @@ export class HomeService {
   			  description: description,
   			  image: image,
   		  };
-  		  return this.http.post(`${this.uri}/home/update/${id}`, home, options).subscribe(data => {
+  		  return this.http.post(`${this.env.apiUrl}/home/update/${id}`, home, options).subscribe(data => {
         this.router.navigate(['/']);
         })
 	}

@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Projects } from '../models/project.model';
 import { Observable } from 'rxjs';
-import { Router } from '@angular/router'; 
+import { Router } from '@angular/router';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -10,26 +11,26 @@ import { Router } from '@angular/router';
 
 export class ProjectService {
 
-	uri:string = 'http://localhost:3000/api'; // Api
+	private env = environment;
 
   constructor(private http: HttpClient, private router: Router) { }
 
   // Get projects
 
   	getProjects():Observable<Projects[]> {
-  		return this.http.get<Projects[]>(`${this.uri}/projects`)
+  		return this.http.get<Projects[]>(`${this.env.apiUrl}/projects`)
   	}
 
   // Get projects by id
 
   	getProjectById(id):Observable<Projects[]> {
-  		return this.http.get<Projects[]>(`${this.uri}/projects/update/${id}`);
+  		return this.http.get<Projects[]>(`${this.env.apiUrl}/projects/update/${id}`);
   	}
 
     // Get projects by url
 
     getProjectByUrl(url):Observable<Projects[]> {
-      return this.http.get<Projects[]>(`${this.uri}/projects/${url}`);
+      return this.http.get<Projects[]>(`${this.env.apiUrl}/projects/${url}`);
     }
 
   // Add project to database
@@ -48,7 +49,7 @@ export class ProjectService {
         content: content,
         url: url
       };
-      return this.http.post(`${this.uri}/projects/create`, project, options)
+      return this.http.post(`${this.env.apiUrl}/projects/create`, project, options)
       .subscribe(data => {
         console.log(data);
         this.router.navigate(['/']);
@@ -71,7 +72,7 @@ export class ProjectService {
   			  content: content,
           url: url
   		  };
-  		  return this.http.post(`${this.uri}/projects/update/${id}`, project, options).subscribe(data => {
+  		  return this.http.post(`${this.env.apiUrl}/projects/update/${id}`, project, options).subscribe(data => {
         this.router.navigate(['/']);
         });		
   	}
@@ -79,6 +80,6 @@ export class ProjectService {
     // Delete project
 
   	deleteProject(id) {
-  		return this.http.get(`${this.uri}/projects/delete/${id}`);
+  		return this.http.get(`${this.env.apiUrl}/projects/delete/${id}`);
   	}
 }

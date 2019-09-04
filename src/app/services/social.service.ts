@@ -2,33 +2,34 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Socials } from '../models/social.model';
 import { Observable } from 'rxjs';
-import { Router } from '@angular/router'; 
+import { Router } from '@angular/router';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SocialService {
 
-uri:string = 'http://localhost:3000/api'; // Api
+private env = environment;
 
   constructor(private http: HttpClient, private router: Router) { }
 
   // Get projects
 
   	getSocial():Observable<Socials[]> {
-  		return this.http.get<Socials[]>(`${this.uri}/social`)
+  		return this.http.get<Socials[]>(`${this.env.apiUrl}/social`)
   	}
 
   	// Get projects by id
 
   	getSocialById(id):Observable<Socials[]> {
-  		return this.http.get<Socials[]>(`${this.uri}/social/update/${id}`);
+  		return this.http.get<Socials[]>(`${this.env.apiUrl}/social/update/${id}`);
   	}
 
     // Get projects by url
 
     getSocialByUrl(url):Observable<Socials[]> {
-      return this.http.get<Socials[]>(`${this.uri}/social/${url}`);
+      return this.http.get<Socials[]>(`${this.env.apiUrl}/social/${url}`);
     }
 
   // Add project to database
@@ -44,7 +45,7 @@ uri:string = 'http://localhost:3000/api'; // Api
   		icon: icon,
   		link: link
       };
-      return this.http.post(`${this.uri}/social/create`, social, options)
+      return this.http.post(`${this.env.apiUrl}/social/create`, social, options)
       .subscribe(data => {
         console.log(data);
         this.router.navigate(['/']);
@@ -64,7 +65,7 @@ uri:string = 'http://localhost:3000/api'; // Api
   			  icon: icon,
   			  link: link
   		  };
-  		  return this.http.post(`${this.uri}/social/update/${id}`, social, options).subscribe(data => {
+  		  return this.http.post(`${this.env.apiUrl}/social/update/${id}`, social, options).subscribe(data => {
         this.router.navigate(['/']);
         })
 	}
