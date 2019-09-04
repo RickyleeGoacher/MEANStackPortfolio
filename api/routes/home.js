@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const path = require('path');
-const jwt = require('jsonWebtoken');
+const jwt = require('jsonwebtoken');
 const { ensureAutenticated } = require('../config/auth');
 
 // Get home

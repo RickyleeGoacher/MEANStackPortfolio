@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const jwt = require('jsonWebtoken');
+const jwt = require('jsonwebtoken');
 const { ensureAutenticated } = require('../config/auth');
 const path = require('path');
 const fs = require('fs');
